@@ -7,9 +7,8 @@ class AppDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
-        children: const [
-          DrawerHeader(
+        children: [
+          const DrawerHeader(
             decoration: BoxDecoration(color: Colors.teal),
             child: Text(
               'Hotel App Menu',
@@ -17,20 +16,24 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Profile'),
+            leading: const Icon(Icons.person),
+            title: const Text('Profile'),
+            onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
+            onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.help_outline),
-            title: Text('Help'),
+            leading: const Icon(Icons.help_outline),
+            title: const Text('Help'),
+            onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.logout),
-            title: Text('Logout'),
+            leading: const Icon(Icons.logout),
+            title: const Text('Logout'),
+            onTap: () {},
           ),
         ],
       ),
