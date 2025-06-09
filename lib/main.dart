@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'screens/nav_root.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
+import 'models/booking.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final dir = await getApplicationDocumentsDirectory();
+  Hive.init(dir.path);
+  Hive.registerAdapter(BookingAdapter());
+  await Hive.openBox<Booking>('bookingsBox');
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
